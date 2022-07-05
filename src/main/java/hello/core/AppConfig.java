@@ -7,7 +7,7 @@ import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
-import hello.core.order.OrderSericeImpl;
+import hello.core.order.OrderServiceImpl;
 import hello.core.order.OrderService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ public class AppConfig {
     }
     @Bean
     public OrderService orderService(){
-        return new OrderSericeImpl(memberRepository(), discountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
     public DiscountPolicy discountPolicy(){
